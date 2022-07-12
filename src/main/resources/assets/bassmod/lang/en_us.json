@@ -5,6 +5,10 @@
   "block.bassmod.ebony_wood": "Ebony Wood",
   "block.bassmod.stripped_ebony_log": "Stripped Ebony Log",
   "block.bassmod.stripped_ebony_wood": "Stripped Ebony Wood",
+  "block.bassmod.ebony_button": "Ebony Button",
+  "block.bassmod.ebony_pressure_plate": "Ebony Pressure Plate",
+  "block.bassmod.ebony_fence": "Ebony Fence",
+  "block.bassmod.ebony_fence_gate": "Ebony Fence Gate",
 
   "itemGroup.bassmod.bass":"Bass Mod"
 
