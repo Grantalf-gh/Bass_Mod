@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.grantalf.bassmod.BassMod"
+    ],
+    "client": [
+      "net.grantalf.bassmod.BassModClient"
     ]
   },
   "mixins": [

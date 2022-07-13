@@ -9,6 +9,12 @@
   "block.bassmod.ebony_pressure_plate": "Ebony Pressure Plate",
   "block.bassmod.ebony_fence": "Ebony Fence",
   "block.bassmod.ebony_fence_gate": "Ebony Fence Gate",
+  "block.bassmod.ebony_slab": "Ebony Slab",
+  "block.bassmod.ebony_stairs": "Ebony Stairs",
+  "block.bassmod.ebony_sign": "Ebony Sign",
+  "block.bassmod.ebony_door": "Ebony Door",
+  "block.bassmod.ebony_trapdoor": "Ebony Trapdoor",
+
 
   "itemGroup.bassmod.bass":"Bass Mod"
 
