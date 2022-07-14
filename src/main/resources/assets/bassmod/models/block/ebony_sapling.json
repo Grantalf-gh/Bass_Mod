@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_cross",
+  "textures": {
+    "cross":"bassmod:block/ebony_sapling"
+  }
+}

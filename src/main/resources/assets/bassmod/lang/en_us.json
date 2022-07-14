@@ -1,10 +1,15 @@
 {
+  "item.bassmod.bass_spawn_egg": "Bass Spawn Egg",
+  "item.bassmod.amongus_spawn_egg": "Imposter Spawn Egg",
+  "item.bassmod.poop": "Poop",
 
   "block.bassmod.ebony_planks": "Ebony Planks",
   "block.bassmod.ebony_log": "Ebony Log",
   "block.bassmod.ebony_wood": "Ebony Wood",
   "block.bassmod.stripped_ebony_log": "Stripped Ebony Log",
   "block.bassmod.stripped_ebony_wood": "Stripped Ebony Wood",
+  "block.bassmod.ebony_leaves": "Ebony Leaves",
+  "block.bassmod.ebony_sapling": "Ebony Sapling",
   "block.bassmod.ebony_button": "Ebony Button",
   "block.bassmod.ebony_pressure_plate": "Ebony Pressure Plate",
   "block.bassmod.ebony_fence": "Ebony Fence",
@@ -15,8 +20,7 @@
   "block.bassmod.ebony_door": "Ebony Door",
   "block.bassmod.ebony_trapdoor": "Ebony Trapdoor",
 
-  "item.bassmod.bass_spawn_egg": "Bass Spawn Egg",
-
+  "entity.bassmod.amongus": "The Imposter",
 
   "itemGroup.bassmod.bass":"Bass Mod"
 

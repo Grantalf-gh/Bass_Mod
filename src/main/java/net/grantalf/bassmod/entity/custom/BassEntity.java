@@ -5,7 +5,7 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.FishEntity;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.SchoolingFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
@@ -18,9 +18,10 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-public class BassEntity extends FishEntity implements IAnimatable {
+public class BassEntity extends SchoolingFishEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
-    public BassEntity(EntityType<? extends FishEntity> entityType, World world) {
+
+    public BassEntity(EntityType<? extends SchoolingFishEntity> entityType, World world) {
         super(entityType, world);
         this.ignoreCameraFrustum = true;
     }
@@ -35,10 +36,8 @@ public class BassEntity extends FishEntity implements IAnimatable {
 
     protected void initGoals() {
         this.goalSelector.add(0, new SwimAroundGoal(this, 3.0, 1));
-        this.goalSelector.add(2, new WanderAroundPointOfInterestGoal(this, 0.75f, false));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.75f, 1));
-        this.goalSelector.add(4, new LookAroundGoal(this));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
+        this.goalSelector.add(5, new FollowGroupLeaderGoal(this));
+
     }
 
     @Override
@@ -63,13 +62,12 @@ public class BassEntity extends FishEntity implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if(event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bass.swim", true));
+        if(!this.isInsideWaterOrBubbleColumn()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bass.flop", true));
             return PlayState.CONTINUE;
         }
-
-        else if(!this.isInsideWaterOrBubbleColumn()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bass.flop", true));
+        else if(event.isMoving()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.bass.swim", true));
             return PlayState.CONTINUE;
         }
 

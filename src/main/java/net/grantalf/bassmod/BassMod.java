@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.grantalf.bassmod.block.ModBlocks;
 import net.grantalf.bassmod.item.ModItems;
 import net.grantalf.bassmod.util.ModRegistries;
+import net.grantalf.bassmod.world.feature.ModConfiguredFeatures;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +14,7 @@ public class BassMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModConfiguredFeatures.registerConfiguredFeatures();
 
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();

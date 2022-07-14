@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.grantalf.bassmod.BassMod;
 import net.grantalf.bassmod.block.entity.ModSignTypes;
 import net.grantalf.bassmod.item.ModItemGroup;
+import net.grantalf.bassmod.world.feature.tree.EbonySaplingGenerator;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -23,6 +24,11 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_LOG).strength(2f)), ModItemGroup.BASS);
     public static final Block STRIPPED_EBONY_WOOD = registerBlock("stripped_ebony_wood",
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD).strength(2f)), ModItemGroup.BASS);
+    public static final Block EBONY_LEAVES = registerBlock("ebony_leaves",
+            new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES)), ModItemGroup.BASS);
+    public static final Block EBONY_SAPLING = registerBlock("ebony_sapling",
+            new SaplingBlock(new EbonySaplingGenerator(),
+                    FabricBlockSettings.copy(Blocks.OAK_SAPLING)), ModItemGroup.BASS);
 
     public static final Block EBONY_BUTTON = registerBlock("ebony_button",
             new WoodenButtonBlock(FabricBlockSettings.copy(Blocks.OAK_BUTTON).strength(2f).noCollision()), ModItemGroup.BASS);
@@ -47,9 +53,9 @@ public class ModBlocks {
             new FenceGateBlock(FabricBlockSettings.copy(Blocks.OAK_FENCE_GATE).strength(2f)), ModItemGroup.BASS);
 
     public static final Block EBONY_WALL_SIGN_BLOCK = registerBlockWithoutItem("ebony_wall_sign",
-            new WallSignBlock(FabricBlockSettings.copy(Blocks.OAK_WALL_SIGN), ModSignTypes.EBONY), ModItemGroup.BASS);
+            new WallSignBlock(FabricBlockSettings.copy(Blocks.OAK_WALL_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
     public static final Block EBONY_SIGN_BLOCK = registerBlockWithoutItem("ebony_sign",
-            new SignBlock(FabricBlockSettings.copy(Blocks.OAK_SIGN), ModSignTypes.EBONY), ModItemGroup.BASS);
+            new SignBlock(FabricBlockSettings.copy(Blocks.OAK_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
 
     public static Block registerBlockWithoutItem(String name, Block block, ItemGroup tab) {
         return Registry.register(Registry.BLOCK, new Identifier(BassMod.MOD_ID, name), block);
