@@ -5,6 +5,7 @@ import net.grantalf.bassmod.block.ModBlocks;
 import net.grantalf.bassmod.item.ModItems;
 import net.grantalf.bassmod.util.ModRegistries;
 import net.grantalf.bassmod.world.feature.ModConfiguredFeatures;
+import net.grantalf.bassmod.world.gen.ModWorldGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,5 +21,7 @@ public class BassMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModRegistries.registerModStuffs();
+
+		ModWorldGen.generateModWorldGen();
 	}
 }

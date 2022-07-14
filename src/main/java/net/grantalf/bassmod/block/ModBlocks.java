@@ -38,7 +38,7 @@ public class ModBlocks {
 
     public static final Block EBONY_SLAB = registerBlock("ebony_slab",
             new SlabBlock(FabricBlockSettings.copy(Blocks.OAK_SLAB).strength(2f)),ModItemGroup.BASS);
-    public static final Block EBONY_STAIRs = registerBlock("ebony_stairs",
+    public static final Block EBONY_STAIRS = registerBlock("ebony_stairs",
             new StairsBlock(ModBlocks.EBONY_PLANKS.getDefaultState(),
                     FabricBlockSettings.copy(Blocks.OAK_STAIRS).strength(2f)),ModItemGroup.BASS);
 
@@ -56,6 +56,9 @@ public class ModBlocks {
             new WallSignBlock(FabricBlockSettings.copy(Blocks.OAK_WALL_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
     public static final Block EBONY_SIGN_BLOCK = registerBlockWithoutItem("ebony_sign",
             new SignBlock(FabricBlockSettings.copy(Blocks.OAK_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
+
+
+
 
     public static Block registerBlockWithoutItem(String name, Block block, ItemGroup tab) {
         return Registry.register(Registry.BLOCK, new Identifier(BassMod.MOD_ID, name), block);

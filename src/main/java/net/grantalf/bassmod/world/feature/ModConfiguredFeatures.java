@@ -13,6 +13,8 @@ import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
+import java.util.List;
+
 public class ModConfiguredFeatures {
 
     public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> EBONY_TREE =
@@ -24,12 +26,15 @@ public class ModConfiguredFeatures {
                     new TwoLayersFeatureSize(1, 0, 2)).build());
 
 
+    public static final RegistryEntry<PlacedFeature> EBONY_CHECKED =
+            PlacedFeatures.register("ebony_checked", EBONY_TREE,
+                    PlacedFeatures.wouldSurvive(ModBlocks.EBONY_SAPLING));
 
 
-    public static <FC extends FeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
-        return Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(BassMod.MOD_ID, name),
-                configuredFeature);
-    }
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> EBONY_SPAWN =
+            ConfiguredFeatures.register("ebony_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfig(List.of(new RandomFeatureEntry(EBONY_CHECKED, 0.5f)),
+                            EBONY_CHECKED));
 
     public static void registerConfiguredFeatures() {
         System.out.println("Registering ModConfiguredFeatures for " + BassMod.MOD_ID);

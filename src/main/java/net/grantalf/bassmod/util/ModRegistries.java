@@ -31,6 +31,11 @@ public class ModRegistries {
         instance.add(ModBlocks.EBONY_PLANKS, 5, 20);
         instance.add(ModBlocks.STRIPPED_EBONY_LOG, 5, 5);
         instance.add(ModBlocks.STRIPPED_EBONY_WOOD, 5, 5);
+        instance.add(ModBlocks.EBONY_LEAVES, 30, 60);
+        instance.add(ModBlocks.EBONY_FENCE, 5, 20);
+        instance.add(ModBlocks.EBONY_FENCE_GATE, 5, 20);
+        instance.add(ModBlocks.EBONY_SLAB, 5, 20);
+        instance.add(ModBlocks.EBONY_STAIRS, 5, 20);
     }
 
     private static void registerFuels() {
