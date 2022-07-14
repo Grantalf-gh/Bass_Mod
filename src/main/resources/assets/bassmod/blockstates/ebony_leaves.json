@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "bassmod:block/ebony_leaves" }
+    "": {
+      "model": "bassmod:block/ebony_leaves"
+    }
   }
 }
