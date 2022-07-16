@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "bassmod:block/vent_block"},
+    "facing=east": {"model": "bassmod:block/vent_block", "y": 90},
+    "facing=south": {"model": "bassmod:block/vent_block", "y": 180},
+    "facing=west": {"model": "bassmod:block/vent_block", "y": 270}
+  }
+}

@@ -1,6 +1,6 @@
 package net.grantalf.bassmod.entity.custom;
 
-import net.grantalf.bassmod.entity.variants.AmongusVariant;
+import net.grantalf.bassmod.entity.variants.ImposterVariant;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -12,7 +12,6 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.passive.FishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Util;
@@ -28,12 +27,12 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nullable;
 
-public class AmongusEntity extends HostileEntity implements IAnimatable {
+public class ImposterEntity extends HostileEntity implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
     private static final TrackedData<Integer> DATA_ID_TYPE_VARIANT =
-            DataTracker.registerData(AmongusEntity.class, TrackedDataHandlerRegistry.INTEGER);
-    public AmongusEntity(EntityType<? extends HostileEntity> entityType, World world) {
+            DataTracker.registerData(ImposterEntity.class, TrackedDataHandlerRegistry.INTEGER);
+    public ImposterEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
         this.ignoreCameraFrustum = true;
         this.experiencePoints = 8;
@@ -80,15 +79,15 @@ public class AmongusEntity extends HostileEntity implements IAnimatable {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty,
                                  SpawnReason spawnReason, @Nullable EntityData entityData,
                                  @Nullable NbtCompound entityNbt) {
-        AmongusVariant variant = Util.getRandom(AmongusVariant.values(), this.random);
+        ImposterVariant variant = Util.getRandom(ImposterVariant.values(), this.random);
         setVariant(variant);
         return super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
     }
 
     private static class TargetGoal<T extends LivingEntity> extends ActiveTargetGoal<T> {
 
-        public TargetGoal(AmongusEntity amongus, Class<T> targetClass) {
-            super(amongus, targetClass, true);
+        public TargetGoal(ImposterEntity imposter, Class<T> targetClass) {
+            super(imposter, targetClass, true);
         }
 
     }
@@ -103,8 +102,8 @@ public class AmongusEntity extends HostileEntity implements IAnimatable {
         tag.putInt("Variant", this.getTypeVariant());
     }
 
-    public AmongusVariant getVariant() {
-        return AmongusVariant.byId(this.getTypeVariant() & 255);
+    public ImposterVariant getVariant() {
+        return ImposterVariant.byId(this.getTypeVariant() & 255);
     }
 
     private int getTypeVariant() {
@@ -117,7 +116,7 @@ public class AmongusEntity extends HostileEntity implements IAnimatable {
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, p_21815_.getInt("Variant"));
     }
 
-    private void setVariant(AmongusVariant variant) {
+    private void setVariant(ImposterVariant variant) {
         this.dataTracker.set(DATA_ID_TYPE_VARIANT, variant.getId() & 255);
     }
 

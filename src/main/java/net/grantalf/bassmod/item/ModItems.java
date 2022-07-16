@@ -17,12 +17,16 @@ public class ModItems {
                     ModBlocks.EBONY_SIGN_BLOCK, ModBlocks.EBONY_WALL_SIGN_BLOCK));
 
     public static final Item BASS_SPAWN_EGG = registerItem("bass_spawn_egg",
-            new SpawnEggItem(ModEntities.BASS, 0x334124, 0x70766a,
+            new SpawnEggItem(ModEntities.BASS, 0x334124, 0xc1d5b5,
                     new FabricItemSettings().group(ModItemGroup.BASS)));
 
     public static final Item AMONGUS_SPAWN_EGG = registerItem("amongus_spawn_egg",
-            new SpawnEggItem(ModEntities.AMONGUS, 0xff1500, 0x00ffe4,
+            new SpawnEggItem(ModEntities.AMONGUS, 0x1d3ce9, 0x00ffe4,
                     new FabricItemSettings().group(ModItemGroup.BASS)));
+    public static final Item IMPOSTER_SPAWN_EGG = registerItem("imposter_spawn_egg",
+            new SpawnEggItem(ModEntities.IMPOSTER, 0xff1500, 0x00ffe4,
+                    new FabricItemSettings().group(ModItemGroup.BASS)));
+
     public static final Item POOP = registerItem("poop",
             new Item(new FabricItemSettings().group(ModItemGroup.BASS)
                     .food(new FoodComponent.Builder().hunger(20).saturationModifier(1f)

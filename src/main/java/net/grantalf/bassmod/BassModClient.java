@@ -7,6 +7,7 @@ import net.grantalf.bassmod.block.ModBlocks;
 import net.grantalf.bassmod.entity.ModEntities;
 import net.grantalf.bassmod.entity.client.AmongusRenderer;
 import net.grantalf.bassmod.entity.client.BassRenderer;
+import net.grantalf.bassmod.entity.client.ImposterRenderer;
 import net.minecraft.client.render.RenderLayer;
 
 public class BassModClient implements ClientModInitializer {
@@ -18,8 +19,11 @@ public class BassModClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EBONY_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.EBONY_SAPLING, RenderLayer.getCutout());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.VENT_BLOCK, RenderLayer.getCutout());
+
 
         EntityRendererRegistry.register(ModEntities.BASS, BassRenderer::new);
         EntityRendererRegistry.register(ModEntities.AMONGUS, AmongusRenderer::new);
+        EntityRendererRegistry.register(ModEntities.IMPOSTER, ImposterRenderer::new);
     }
 }
