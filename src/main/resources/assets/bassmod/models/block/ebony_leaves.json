@@ -1,6 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "bassmod:block/leaves",
   "textures": {
-    "all":"bassmod:block/ebony_leaves"
+    "all": "bassmod:block/ebony_leaves"
   }
 }

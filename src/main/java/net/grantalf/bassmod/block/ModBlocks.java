@@ -2,8 +2,8 @@ package net.grantalf.bassmod.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.rendering.data.v1.RenderAttachmentBlockEntity;
 import net.grantalf.bassmod.BassMod;
-import net.grantalf.bassmod.block.custom.VentBlock;
 import net.grantalf.bassmod.block.entity.ModSignTypes;
 import net.grantalf.bassmod.item.ModItemGroup;
 import net.grantalf.bassmod.world.feature.tree.EbonySaplingGenerator;
@@ -27,6 +27,7 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copy(Blocks.STRIPPED_OAK_WOOD).strength(2f)), ModItemGroup.BASS);
     public static final Block EBONY_LEAVES = registerBlock("ebony_leaves",
             new LeavesBlock(FabricBlockSettings.copy(Blocks.OAK_LEAVES).nonOpaque()), ModItemGroup.BASS);
+
     public static final Block EBONY_SAPLING = registerBlock("ebony_sapling",
             new SaplingBlock(new EbonySaplingGenerator(),
                     FabricBlockSettings.copy(Blocks.OAK_SAPLING)), ModItemGroup.BASS);
@@ -57,10 +58,6 @@ public class ModBlocks {
             new WallSignBlock(FabricBlockSettings.copy(Blocks.OAK_WALL_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
     public static final Block EBONY_SIGN_BLOCK = registerBlockWithoutItem("ebony_sign",
             new SignBlock(FabricBlockSettings.copy(Blocks.OAK_SIGN).strength(0.15f), ModSignTypes.EBONY), ModItemGroup.BASS);
-
-    public static final Block VENT_BLOCK = registerBlock("vent_block",
-            new VentBlock(FabricBlockSettings.of(Material.METAL).nonOpaque()), ModItemGroup.BASS);
-
 
 
     public static Block registerBlockWithoutItem(String name, Block block, ItemGroup tab) {

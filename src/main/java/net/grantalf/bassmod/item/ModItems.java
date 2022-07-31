@@ -20,19 +20,6 @@ public class ModItems {
             new SpawnEggItem(ModEntities.BASS, 0x334124, 0xc1d5b5,
                     new FabricItemSettings().group(ModItemGroup.BASS)));
 
-    public static final Item AMONGUS_SPAWN_EGG = registerItem("amongus_spawn_egg",
-            new SpawnEggItem(ModEntities.AMONGUS, 0x1d3ce9, 0x00ffe4,
-                    new FabricItemSettings().group(ModItemGroup.BASS)));
-    public static final Item IMPOSTER_SPAWN_EGG = registerItem("imposter_spawn_egg",
-            new SpawnEggItem(ModEntities.IMPOSTER, 0xff1500, 0x00ffe4,
-                    new FabricItemSettings().group(ModItemGroup.BASS)));
-
-    public static final Item POOP = registerItem("poop",
-            new Item(new FabricItemSettings().group(ModItemGroup.BASS)
-                    .food(new FoodComponent.Builder().hunger(20).saturationModifier(1f)
-                            .statusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 2400, 4), 1f)
-                            .alwaysEdible().build())));
-
     public static Item registerItem(String name, Item item) {
         return Registry.register(Registry.ITEM, new Identifier(BassMod.MOD_ID, name), item);
     }

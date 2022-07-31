@@ -53,8 +53,6 @@ public class ModRegistries {
 
     private static void registerAttributes() {
         FabricDefaultAttributeRegistry.register(ModEntities.BASS, BassEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.AMONGUS, BassEntity.setAttributes());
-        FabricDefaultAttributeRegistry.register(ModEntities.IMPOSTER, BassEntity.setAttributes());
     }
 
 }
